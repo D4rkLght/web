@@ -3,6 +3,5 @@ def wsgi_application(environ, start_response):
     headers = [
         ('Content-Type', 'text/plain')
     ]
-    body = 'Hello, world!'
     start_response(status, headers)
-    return [body]
+    return environ["QUERY_STRING"]
