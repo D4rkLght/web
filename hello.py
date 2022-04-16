@@ -4,4 +4,4 @@ def application(environ, start_response):
         ('Content-Type', 'text/plain')
     ]
     start_response(status, headers)
-    return bytes('\n'.join(a.split('&')), encoding='utf8')
+    return bytes('\n'.join(environ.split('&')), encoding='utf8')
