@@ -23,7 +23,8 @@ urlpatterns = patterns(
     url(r'^$', 'qa.views'),
     url(r'^login/', 'qa.views'),
     url(r'^signup/', 'qa.views'),
-    url(r'^question/\d+/', 'qa.views.),
+    url(r'^question/\d+/', 'qa.views'),
     url(r'^ask/', 'qa.views'),
     url(r'^popular/', 'qa.views'),
-    url(r'^new/', 'qa.views
+    url(r'^new/', 'qa.views')
+)
