@@ -18,11 +18,11 @@ from django.contrib import admin
 from django.conf.urls import include, url
 
 urlpatterns = [
-    url(r'^$', 'qa.views'),
-    url(r'^login/.*$', 'qa.views'),
-    url(r'^signup/.*$', 'qa.views'),
-    url(r'^question/\d+/$', 'qa.views'),
-    url(r'^ask/.*$', 'qa.views'),
-    url(r'^popular/.*$', 'qa.views'),
-    url(r'^new/.*$', 'qa.views')
+    url(r'^$', include('qa.views')),
+    url(r'^login/.*$', include('qa.views')),
+    url(r'^signup/.*$', include('qa.views')),
+    url(r'^question/\d+/$', include('qa.views')),
+    url(r'^ask/.*$', include('qa.views')),
+    url(r'^popular/.*$', include('qa.views')),
+    url(r'^new/.*$', include('qa.views'))
 ]
