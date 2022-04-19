@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 
 
-urlpatterns = patterns(
+urlpatterns = (
     'qa.views',
     url(r'^$', 'test'),
     url(r'^login/.*$', 'test', name='login'),
