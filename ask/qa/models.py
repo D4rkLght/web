@@ -2,6 +2,13 @@
 from django.db import models
 
 
+class Answer(models.Model):
+    text = models.CharField(max_length=500)
+    added_at = models.DateField()
+    question = models.OneToOneField()
+    author = models.CharField(max_length=40)
+
+
 class QuestionManager(models.Manager):
     def new(self):
         return Question
@@ -16,11 +23,4 @@ class Question(models.Model):
     added_at = models.DateField()
     rating = models.IntegerField()
     author = models.CharField(max_length=40)
-    likes = models.ManyToManyField()
-
-
-class Answer(models.Model):
-    text = models.CharField(max_length=500)
-    added_at = models.DateField()
-    question = models.OneToOneField()
-    author = models.CharField(max_length=40)
+    likes = models.ManyToManyField(Answer)
