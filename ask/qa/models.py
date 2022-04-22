@@ -12,10 +12,10 @@ class QuestionManager(models.Manager):
 
 class Question(models.Model):
     title = models.CharField(max_length=225)
-    text = models.TextField()
+    text = models.TextField(User)
     added_at = models.DateTimeField(blank=True, auto_now_add=True)
     rating = models.IntegerField(default=0)
-    author = models.CharField(max_length=40)
+    author = models.ForeignKey(max_length=40)
     likes = models.ManyToManyField(User, related_name='question_like_user')
 
 
