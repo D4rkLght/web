@@ -25,4 +25,4 @@ class Answer(models.Model):
     text = models.TextField(User)
     added_at = models.DateField()
     question = models.OneToOneField("Question", on_delete=models.PROTECT)
-    author = models.CharField(max_length=40)
+    author = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
