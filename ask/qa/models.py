@@ -1,12 +1,5 @@
-
 from django.db import models
-
-
-class Answer(models.Model):
-    text = models.CharField(max_length=500)
-    added_at = models.DateField()
-    question = models.OneToOneField()
-    author = models.CharField(max_length=40)
+from django.contrib.auth.models import User
 
 
 class QuestionManager(models.Manager):
@@ -23,4 +16,11 @@ class Question(models.Model):
     added_at = models.DateField()
     rating = models.IntegerField()
     author = models.CharField(max_length=40)
-    likes = models.ManyToManyField(Answer)
+    likes = models.ManyToManyField(User, related_name='question_like_user')
+
+
+class Answer(models.Model):
+    text = models.CharField(max_length=500)
+    added_at = models.DateField()
+    question = models.OneToOneField("Question", on_delete=models.PROTECT)
+    author = models.CharField(max_length=40)
