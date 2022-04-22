@@ -22,7 +22,7 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
-    text = models.CharField(max_length=500)
+    text = models.TextField(User)
     added_at = models.DateField()
     question = models.OneToOneField("Question", on_delete=models.PROTECT)
     author = models.CharField(max_length=40)
