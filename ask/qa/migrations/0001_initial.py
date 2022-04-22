@@ -3,6 +3,7 @@
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
+from django.contrib.auth.models import User
 
 
 class Migration(migrations.Migration):
@@ -17,23 +18,27 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Question',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=225)),
-                ('text', models.CharField(max_length=1000)),
+                ('text',  models.TextField(User)),
                 ('added_at', models.DateField()),
                 ('rating', models.IntegerField()),
                 ('author', models.CharField(max_length=40)),
-                ('likes', models.ManyToManyField(related_name='question_like_user', to=settings.AUTH_USER_MODEL)),
+                ('likes', models.ManyToManyField(
+                    related_name='question_like_user', to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
             name='Answer',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('text', models.CharField(max_length=500)),
                 ('added_at', models.DateField()),
                 ('author', models.CharField(max_length=40)),
-                ('question', models.OneToOneField(on_delete=django.db.models.deletion.PROTECT, to='qa.Question')),
+                ('question', models.OneToOneField(
+                    on_delete=django.db.models.deletion.PROTECT, to='qa.Question')),
             ],
         ),
     ]

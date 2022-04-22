@@ -1,3 +1,4 @@
+
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -11,7 +12,7 @@ class QuestionManager(models.Manager):
 
 
 class Question(models.Model):
-    objects = QuestionManager()
+    object = QuestionManager()
     title = models.CharField(max_length=225)
     text = models.TextField(User)
     added_at = models.DateTimeField(blank=True, auto_now_add=True)
