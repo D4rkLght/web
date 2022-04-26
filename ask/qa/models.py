@@ -5,10 +5,10 @@ from django.contrib.auth.models import User
 
 class QuestionManager(models.Manager):
     def new(self):
-        return Question
+        return self.order_by('-added_at')
 
     def popular(self):
-        return sorted(Question.rating)
+        return self.order_by('-rating')
 
 
 class Question(models.Model):

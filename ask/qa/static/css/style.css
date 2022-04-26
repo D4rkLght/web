@@ -1,0 +1,164 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+
+
+body{
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header{
+    display: flex; 
+    width: 100%;
+    height: 80px;  
+    background-color: rgb(67, 124, 224);
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.logo{
+    margin-left: 20px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.search{
+    height: 20px;
+    border: solid;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.submit{
+    color: #fff;
+    border: solid black;
+    width: 100px;
+    height: 30px;
+    background-color: green;
+    box-shadow: aqua;
+    font-size: 20px;
+    box-shadow: 2px 2px 2px black;
+    
+}
+
+.nav_header{
+    width: 14%;
+}
+
+.ul_header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.li_header{
+    list-style: none;
+   margin-right: auto;
+}
+
+.verification{
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+}
+
+.main{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.right{
+    width: 20%;
+    margin: 50px 20px;
+}
+
+.tags{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 20px 0px;
+}
+
+.ul_popular{
+    width: 75%;
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    line-height: 35px;
+}
+
+.li_popular{
+    margin-right: 15px;
+}
+
+.perl{
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 18px;
+}
+.python{
+    text-decoration: none;
+    color: red;
+    font-weight: 700;
+    font-size: 18px;
+}
+.tech{
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 18px;
+}
+.sql{
+    text-decoration: none;
+    color: red;
+    font-weight: 700;
+    font-size: 18px;
+}
+.django{
+    text-decoration: none;
+    color: rgb(6, 238, 18);
+    font-weight: 700;
+    font-size: 18px;
+}
+.mail{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 18px;
+}
+.vol{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 18px;
+}
+.fox{
+    text-decoration: none;
+    color: orange;
+    font-weight: 700;
+    font-size: 18px;
+}
+.ul_best{
+    list-style: none;
+}
+
+.li_best{
+    margin: 10px 0px;
+}
+
+.link_best{
+    color: blue;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.footer{
+    width: 100%;
+    height: 45px;
+    background-color: brown;
+    
+}
