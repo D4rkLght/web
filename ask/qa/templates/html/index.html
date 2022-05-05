@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -31,8 +34,35 @@
         </nav>
     </header>
     <main class="main">
+        
         <div class="left">
+            {% block content %}
+            {% for post in posts %} 
+                {{ post.likes }}
+                {{ post.title }}
+                }<br>
+                <a href="question/{{ post.id }}">link</a><br>
+            {% endfor %}
+            <div class="pagination">
+                <span class="step-links">
+                    {% if posts.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ posts.previous_page_number }}">previous</a>
+                    {% endif %}
+            
+                    <span class="current">
+                        Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+                    </span>
+            
+                    {% if posts.has_next %}
+                        <a href="?page={{ posts.next_page_number }}">next</a>
+                        <a href="?page={{ posts.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+            {% endblock %}
         </div>
+       
         <div class="right">
             <div class="Popular_Tags">
                 <p class="tags">Popular Tags</p>

@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="new_question">
+    <b>New Question</b>
+    <form>
+        <b>Title</b>
+        <input type="text" size="40">
+        <p></p>
+        <b>Text</b>
+        <textarea name="comment" cols="80" rows="20" ></textarea></p>
+        <b>Tags</b>
+        <input type="text" size="40">
+        <p><input type="submit" value="Ask"></p>
+    </form>
+</div>
+{% endblock %}
