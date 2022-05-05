@@ -70,6 +70,10 @@ body{
     width: 100%;
     justify-content: space-between;
 }
+.left{
+    width: 80%;
+}
+
 
 .right{
     width: 20%;
