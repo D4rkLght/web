@@ -19,6 +19,9 @@ class Question(models.Model):
     author = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     likes = models.ManyToManyField(User, related_name='question_like_user')
 
+    def __unicode__(self):
+        return self.title
+
     def __str__(self):
         return self.title
 
@@ -28,6 +31,9 @@ class Answer(models.Model):
     added_at = models.DateField()
     question = models.OneToOneField("Question", on_delete=models.PROTECT)
     author = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+
+    def __unicode__(self):
+        return self.text
 
     def __str__(self):
         return self.text
